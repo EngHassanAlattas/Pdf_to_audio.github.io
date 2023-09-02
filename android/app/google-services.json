@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409146424037",
+    "project_id": "pdf1-b85d0",
+    "storage_bucket": "pdf1-b85d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409146424037:android:74322d8424a6d5ff57320c",
+        "android_client_info": {
+          "package_name": "com.example.nfc_reader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409146424037-7731qlcf4oe6ha6ueeidb4u0voht2sa7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYIu5Ri4_9COnLXPo-stQDP_YYIbpL0Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409146424037-7731qlcf4oe6ha6ueeidb4u0voht2sa7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

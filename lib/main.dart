@@ -25,19 +25,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final List<Widget> _pages = [Pdf_to_text(), Speech_to_text()];
   int _selectedPageIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void setSelectedIndex(int index) {
     setState(() {
       _selectedPageIndex = index;
     });
-  }
-
-  final List<Widget> _pages = [Pdf_to_text(), Speech_to_text()];
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override

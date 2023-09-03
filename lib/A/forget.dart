@@ -19,17 +19,21 @@ class forger_pass extends StatefulWidget {
 
 // ignore: camel_case_types
 class _forger_passState extends State<forger_pass> {
-    void _showSnackBar(String message) {
+    void _showSnackBar(BuildContext context, String message, Color backgroundColor, Duration duration) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
+      SnackBar(
+        content: Center(child: Text(message,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
+        backgroundColor: backgroundColor,
+        duration: duration,
+      ),
     );
   }
    Future<void> _resetPassword() async {
     try {
       await _auth.sendPasswordResetEmail(email: _emailController.text);
-      _showSnackBar("Password reset email sent!");
+       _showSnackBar(context, "Password reset email sent!", Colors.green, const Duration(seconds: 2));
     } catch (e) {
-      _showSnackBar("Password reset failed: $e");
+       _showSnackBar(context, "Password reset failed: $e", Colors.red, const Duration(seconds: 2));
     }
   }
   final FirebaseAuth _auth = FirebaseAuth.instance;

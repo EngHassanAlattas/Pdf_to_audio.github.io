@@ -1,4 +1,6 @@
 
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +101,7 @@ class _Lock_screenState extends State<Lock_screen> {
                     ),
                   ),
                 ),
-                  CustomizedButton(
+                                  CustomizedButton(
                   buttonText: "Login",
                   buttonColor: Colors.teal,
                   textColor: Colors.white,
@@ -108,36 +110,42 @@ class _Lock_screenState extends State<Lock_screen> {
                     await FirebaseAuthService().login(
                         _emailController.text.trim(),
                         _passwordController.text.trim());
-                        _clearTextField();
+                        
                     if (FirebaseAuth.instance.currentUser != null) {
                       if (!mounted) return;
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const Pdf_to_text()));
-                    }else showDialog(context: context, builder: (context)=> AlertDialog(
+                              _clearTextField();
+                    }else {
+                      
+                    }
+                    // ignore: use_build_context_synchronously
+                   
+                        // ignore: use_build_context_synchronously
+                      
+       
+                      }on FirebaseException catch(e){
+                         // ignore: use_build_context_synchronously
+                          showDialog(context: context, builder: (context)=> AlertDialog(
                           backgroundColor: Colors.white,
        
-                              title: Text(
+                              title: const Text(
                                         "Invalid Username or password. Please register again or make sure that username and password is correct",style: TextStyle(color: Colors.red),),
                                     actions: [
                                       ElevatedButton(
-                                        child: Text("Register Now"),
+                                        child: const Text("Register Now"),
                                         onPressed: () {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Sing_up()));
+                                                      const Sing_up()));
                                         },
                                       )
                                     ]
                         ));
-                        // ignore: use_build_context_synchronously
-                      
-       
-                      }on FirebaseException catch(e){
-                         _showSnackBar(context, "Sign up failed", Colors.red, Duration(seconds: 2));
       
                       }
                     // Navigator.push(context,  MaterialPageRoute(
